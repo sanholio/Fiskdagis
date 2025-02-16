@@ -29,6 +29,9 @@ export async function Navbar() {
         </Link>
         <NavbarLinks />
       </div>
+ 
+  
+
 
       <div className="flex items-center">
         {user ? (
