@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     return new Response("Webhook Error", { status: 400 });
   }
 
+  
   switch (event.type) {
     case "checkout.session.completed": {
       const session = event.data.object;
