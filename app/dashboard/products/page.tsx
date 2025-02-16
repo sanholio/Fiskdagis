@@ -86,7 +86,7 @@ export default async function ProductsRoute() {
                   <TableCell>{item.status}</TableCell>
                   <TableCell>${item.price}</TableCell>
                   <TableCell>
-                    {new Intl.DateTimeFormat("en-US").format(item.createdAt)}
+                    {new Intl.DateTimeFormat("sv-SE").format(item.createdAt)}
                   </TableCell>
                   <TableCell className="text-end">
                     <DropdownMenu>
