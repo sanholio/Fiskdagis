@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import all from "@/public/all.jpeg";
-import men from "@/public/men.jpeg";
-import women from "@/public/women.jpeg";
+import all from "@/public/hundgodis.jpeg";
+import hundfounder from "@/public/hundfonder.jpeg";
+import hundben from "@/public/hundben.jpeg";
 
 export function CategoriesSelection() {
   return (
@@ -38,14 +38,14 @@ export function CategoriesSelection() {
 
         <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
           <Image
-            src={men}
+            src={hundfounder}
             alt="Products for men Image"
-            className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
+            className="object-top object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
           />
           <div className="bg-gradient-to-b from-transparent to-black opacity-55 sm:absolute sm:inset-0" />
           <div className="p-6 flex items-end sm:absolute sm:inset-0">
-            <Link href="/products/men">
-              <h3 className="text-white font-semibold">Products for Men</h3>
+            <Link href="/products/hundfoder">
+              <h3 className="text-white font-semibold">Produkter för hundfoder</h3>
               <p className="mt-1 text-sm text-white">Shop Now</p>
             </Link>
           </div>
@@ -53,14 +53,14 @@ export function CategoriesSelection() {
 
         <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
           <Image
-            src={women}
+            src={hundben}
             alt="Women product image"
             className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
           />
           <div className="bg-gradient-to-b from-transparent to-black opacity-55 sm:absolute sm:inset-0" />
           <div className="p-6 flex items-end sm:absolute sm:inset-0">
-            <Link href="/products/women">
-              <h3 className="text-white font-semibold">Products for Women</h3>
+            <Link href="/products/hundben">
+              <h3 className="text-white font-semibold">Produkter för Hundben</h3>
               <p className="mt-1 text-sm text-white">Shop Now</p>
             </Link>
           </div>

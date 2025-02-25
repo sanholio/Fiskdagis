@@ -13,22 +13,22 @@ export const navbarLinks = [
   {
     id: 1,
     name: "All Products",
-    href: "/products/all",
+    href: "/butik/products/all",
   },
   {
     id: 2,
-    name: "Men",
-    href: "/products/men",
+    name: "Hundfoder",
+    href: "/butik/products/hundfoder",
   },
   {
     id: 3,
-    name: "Women",
-    href: "/products/women",
+    name: "Hundgodis",
+    href: "/butik/products/hundgodis",
   },
   {
     id: 4,
-    name: "Kids",
-    href: "/products/kids",
+    name: "Hundben",
+    href: "/butik/products/hundben",
   },
 ];
 

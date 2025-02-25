@@ -2,6 +2,8 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
+const allowedEmails = ["sanholio90@gmail.com", "another.email@example.com"];
+
 const f = createUploadthing();
 
 // FileRouter for your app, can contain multiple FileRoutes
@@ -14,7 +16,8 @@ export const ourFileRouter = {
       const user = await getUser();
 
       // If you throw, the user will not be able to upload
-      if (!user || user.email !== "sanholio90@gmail.com")
+
+      if (!user || !allowedEmails.includes(user.email ?? ""))
         throw new UploadThingError("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
@@ -37,7 +40,7 @@ export const ourFileRouter = {
       const user = await getUser();
 
       // If you throw, the user will not be able to upload
-      if (!user || user.email !== "sanholio90@gmail.com")
+      if (!user || !allowedEmails.includes(user.email ?? ""))
         throw new UploadThingError("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`

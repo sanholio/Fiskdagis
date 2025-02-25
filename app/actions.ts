@@ -11,11 +11,13 @@ import { revalidatePath } from "next/cache";
 import { stripe } from "./lib/stripe";
 import Stripe from "stripe";
 
+const allowedEmails = ["sanholio90@gmail.com", "another.email@example.com"];
+
 export async function createProduct(prevState: unknown, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "sanholio90@gmail.com") {
+  if (!user || !allowedEmails.includes(user.email ?? "")) {
     return redirect("/");
   }
 
@@ -50,7 +52,7 @@ export async function editProduct(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "sanholio90@gmail.com") {
+  if (!user || !allowedEmails.includes(user.email ?? "")) {
     return redirect("/");
   }
 
@@ -89,7 +91,7 @@ export async function deleteProduct(formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "sanholio90@gmail.com") {
+  if (!user || !allowedEmails.includes(user.email ?? "")) {
     return redirect("/");
   }
 
@@ -106,7 +108,7 @@ export async function createBanner(prevState: any, formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "sanholio90@gmail.com") {
+  if (!user || !allowedEmails.includes(user.email ?? "")) {
     return redirect("/");
   }
 
@@ -132,7 +134,7 @@ export async function deleteBanner(formData: FormData) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "sanholio90@gmail.com") {
+  if (!user || !allowedEmails.includes(user.email ?? "")) {
     return redirect("/");
   }
 
