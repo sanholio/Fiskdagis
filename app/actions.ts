@@ -11,7 +11,7 @@ import { revalidatePath } from "next/cache";
 import { stripe } from "./lib/stripe";
 import Stripe from "stripe";
 
-const allowedEmails = ["sanholio90@gmail.com", "another.email@example.com"];
+const allowedEmails = ["sanholio90@gmail.com", "info@trippandetassar.se"];
 
 export async function createProduct(prevState: unknown, formData: FormData) {
   const { getUser } = getKindeServerSession();

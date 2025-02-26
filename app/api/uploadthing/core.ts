@@ -2,7 +2,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
-const allowedEmails = ["sanholio90@gmail.com", "another.email@example.com"];
+const allowedEmails = ["sanholio90@gmail.com", "info@trippandetassar.se"];
 
 const f = createUploadthing();
 
