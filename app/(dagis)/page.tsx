@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { CategoriesSelection } from "../components/storefront/CategorySelection";
+import { FeaturedProducts } from "../components/storefront/FeaturedProducts";
 
 const Home = () => {
   return (
@@ -72,6 +74,11 @@ const Home = () => {
         </div>
       </section>
 
+
+      <section>
+        <CategoriesSelection />
+        <FeaturedProducts />
+      </section>
       {/* <section
           id="events"
           className="wrapper my-8 flex flex-col gap-8 md:gap-12"

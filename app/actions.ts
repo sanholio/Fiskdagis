@@ -236,7 +236,7 @@ export async function delItem(formData: FormData) {
     await redis.set(`cart-${user.id}`, updateCart);
   }
 
-  revalidatePath("/bag");
+  revalidatePath("/butik/bag");
 }
 
 export async function checkOut() {
@@ -253,7 +253,7 @@ export async function checkOut() {
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] =
       cart.items.map((item) => ({
         price_data: {
-          currency: "usd",
+          currency: "sek",
           unit_amount: item.price * 100,
           product_data: {
             name: item.name,
@@ -268,12 +268,12 @@ export async function checkOut() {
       line_items: lineItems,
       success_url:
         process.env.NODE_ENV === "development"
-          ? "http://localhost:3000/payment/success"
-          : "https://fiskdagis.vercel.app//payment/success",
+          ? "http://localhost:3000/butik/payment/success"
+          : "https://fiskdagis.vercel.app/butik/payment/success",
       cancel_url:
         process.env.NODE_ENV === "development"
-          ? "http://localhost:3000/payment/cancel"
-          : "https://fiskdagis.vercel.app//payment/cancel",
+          ? "http://localhost:3000/butik/payment/cancel"
+          : "https://fiskdagis.vercel.app/butik/payment/cancel",
       metadata: {
         userId: user.id,
       },
